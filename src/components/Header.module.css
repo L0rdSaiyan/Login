@@ -1,0 +1,30 @@
+.header_container
+{
+    display: flex;
+    justify-content: space-between;
+    background-color: blueviolet;
+    box-shadow: 0 2px 4px black;
+    top: 0;
+    width: 100%;
+    /* position: absolute; */
+}
+
+#list
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: auto;
+    
+}
+
+#list li
+{
+    margin-right: 1rem;
+}
+
+li
+{
+    list-style: none;
+}

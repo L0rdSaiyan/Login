@@ -1,0 +1,15 @@
+.inputText
+{
+    border-radius: 6px;
+    text-align: center;
+    width: 90%;
+    height: 26px;
+    background-color: transparent;
+    padding: 3px;
+}
+
+
+.inputText::placeholder
+{
+   color: rgb(163, 163, 163)
+}

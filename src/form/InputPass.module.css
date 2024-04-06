@@ -1,0 +1,14 @@
+.inputpass
+{
+    border-radius: 6px;
+    text-align: center;
+    width: 90%;
+    height: 26px;
+    padding: 3px;
+    background-color: transparent;
+}
+
+.inputpass::placeholder
+{
+    color: rgb(163, 163, 163);
+}

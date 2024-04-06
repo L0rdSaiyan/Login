@@ -1,0 +1,48 @@
+.container {
+    background: linear-gradient(90deg, rgb(233, 23, 23), rgb(29, 29, 196));
+    display: flex;
+    width: 100%;
+}
+
+.form_container {
+    background-color: black;
+    width: 60%;
+    height: 60%;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto; /* Centralizado vertical e horizontalmente */
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1{
+    color:white;
+}
+
+form >* 
+{
+    margin: 15px;
+}
+
+
+.profilePic {
+}
+
+
+
+@media screen and (min-width: 1000px)
+{
+    .form_container
+    {
+        width: 30%;
+        height: 60%;
+    }
+}
