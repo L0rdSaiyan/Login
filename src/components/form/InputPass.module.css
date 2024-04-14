@@ -6,6 +6,7 @@
     height: 26px;
     padding: 3px;
     background-color: transparent;
+    color: white;
 }
 
 .inputpass::placeholder

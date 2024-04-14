@@ -1,0 +1,19 @@
+.container
+{
+    background-color: blue;
+    width: 100%;
+}
+
+.containerPosts
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerPosts >*
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

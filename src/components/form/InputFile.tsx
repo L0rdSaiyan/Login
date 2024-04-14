@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./InputFile.module.css";
-import anonymous from "../images/anonymousiamge.jpg"
+import anonymous from "../../images/anonymousiamge.jpg"
 
 export default function InputFile() {
     const [file, setFile] = useState('');

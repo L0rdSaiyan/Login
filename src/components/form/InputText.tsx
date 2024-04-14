@@ -1,9 +1,9 @@
 import styles from "./InputText.module.css"
 type InputProps = {
     text?: string;
-    value: string;
+    value?: string;
     name: string
-    event: (e: React.ChangeEvent<HTMLInputElement>) => void; // Adicione a propriedade onChange aqui
+    event?: (e: React.ChangeEvent<HTMLInputElement>) => void; // Adicione a propriedade onChange aqui
 };
 
 export default function InputText({text, value, name, event} : InputProps)

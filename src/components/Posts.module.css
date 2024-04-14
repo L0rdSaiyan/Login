@@ -1,0 +1,25 @@
+.container
+{
+    background-color: gray;
+    display: flex;
+    width: 70%;
+    height: auto;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.title
+{
+    background-color: red;
+    margin-bottom: 10px;
+}
+
+.content {
+    word-wrap: break-word; 
+    overflow-wrap: break-word; /* Compatibilidade com navegadores mais antigos */
+  }
+
+.title, .content
+{
+    width: 100%;
+}
