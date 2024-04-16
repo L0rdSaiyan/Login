@@ -2,9 +2,9 @@ import styles from "./InputPass.module.css"
 
 type InputProps = {
     text?: string;
-    value: string;
+    value?: string;
     name: string
-    event: (e: React.ChangeEvent<HTMLInputElement>) => void; // Adicione a propriedade onChange aqui
+    event?: (e: React.ChangeEvent<HTMLInputElement>) => void; // Adicione a propriedade onChange aqui
 };
 
 

@@ -7,7 +7,8 @@ import { useEffect, useState } from "react"
 type PostTypes = {
     id: number,
     titulo: string,
-    conteudo: string
+    conteudo: string,
+    authorPost: string
 }
 
 export default function Home() {
@@ -37,23 +38,25 @@ export default function Home() {
         setContent(event.target.value)
     }
 
-    async function createPost(event : React.FormEvent<HTMLFormElement>) {
-        event?.preventDefault()
-        
+    const createPost = async (event : React.FormEvent<HTMLFormElement>) => {
+        event?.preventDefault();
+    
         const Post = {
             titulo: title,
-            conteudo: content
-        }
-
+            conteudo: content,
+            name: localStorage.getItem("userName") // Mudar para a chave correta
+        };
+    
         axios.post("http://localhost:8081/postagemcriada", Post)
         .then((response) => {
-            console.log(`Resposta do servidor: ${response.data}`)
-            setPostCreated(prevState => !prevState) // Altera o estado para que useEffect rode novamente
+            console.log(`Resposta do servidor: ${response.data}`);
+            setPostCreated(prevState => !prevState);
         })
         .catch((error) => {
-            console.log(error)
-        })
-    }
+            console.log(error);
+        });
+    };
+    
 
     return (
         <div className={styles.container}>
@@ -73,13 +76,13 @@ export default function Home() {
                         />
                         <input 
                             type="submit"
-                        />
+                        /> 
                     </form>
                 </div>
             </div>
             <div className={styles.containerPosts}>
                 {posts && posts.map((post) => (
-                    <Posts key={post.id} title={post.titulo} content={post.conteudo} />
+                    <Posts key={post.id} userName={post.authorPost} title={post.titulo} content={post.conteudo} />
                 ))}
             </div>
         </div>

@@ -10,6 +10,7 @@ export default function Login() {
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [confirm, setConfirm] = useState<string>('')
+    const [userId, setUserId] = useState<string>('')
 
     const handleName = (event: React.ChangeEvent<HTMLInputElement>) => {
         setUsername(event.target.value);
@@ -38,37 +39,32 @@ export default function Login() {
         }
     }
 
-    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) =>
-    {
-        event?.preventDefault()
-
-        if(validateUser())
-        {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event?.preventDefault();
+    
+        if (validateUser()) {
             const data = {
                 name: username,
                 senha: password
-            }
+            };
     
             axios.post('http://localhost:8081/cadastrorealizado', data)
-            .then((response)=>
-            {
-                console.log(`Resposta do Servidor : ${response.data}`)
-                //response data pega o valor passado para o res.send no express. Massa
-    
-            })
-            .catch((error) =>
-            {
-                console.log(`Erro ao fazer a solicitação : ${error}`)
-            })
-        }
-        else
-        {
-            window.alert("as senhas não conferem")
+                .then((response) => {
+                    console.log('Resposta do Servidor:', response.data); // Use JSON.stringify para visualizar o objeto corretamente
+                    // localStorage.setItem("userId", )
+                    // response data pega o valor passado para o res.send no express. Massa
+                    localStorage.setItem("userName",response.data.name)
+                    console.log(response.data)
+                })
+                .catch((error) => {
+                    console.log('Erro ao fazer a solicitação:', error);
+                });
+        } else {
+            window.alert('As senhas não conferem');
             return;
         }
-
-     
-    }
+    };
+    
 
 
     return (
